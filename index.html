@@ -148,3 +148,32 @@ function addToBasket(item, price) {
     *This is a fictional store. No actual purchases or deliveries are made.*
 </p>
 
+<script>
+let basket = [];
+let total = 0;
+
+function addToBasket(item, price) {
+    basket.push({ name: item, price: price });
+    total += price;
+
+    let basketList = document.getElementById("basket-items");
+    let basketTotal = document.getElementById("basket-total");
+
+    let listItem = document.createElement("li");
+    listItem.textContent = `${item} - £${price.toFixed(2)}`;
+    basketList.appendChild(listItem);
+
+    basketTotal.textContent = `Total: £${total.toFixed(2)}`;
+}
+</script>
+<img class="product-image" src="dubaichocolatebar.jpg" alt="Dubai Chocolate Bar">
+<img class="product-image" src="chocolatesponge.jpg" alt="Chocolate Sponge">
+<img class="product-image" src="chocolateballs.jpg" alt="Chocolate Balls">
+.product-image {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
