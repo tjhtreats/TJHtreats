@@ -80,13 +80,26 @@
 </div>
 </body></html>
 
+<p style="font-size: 14px; color: red;">
+    *This is a fictional store. No actual purchases or deliveries are made.*
+</p>
+<script>
+let basket = [];
+let total = 0;
 
+function addToBasket(item, price) {
+    basket.push({ name: item, price: price });
+    total += price;
 
-<div id="basket">
-    <h2>Your Basket</h2>
-    <ul id="basket-items"></ul>
-    <p id="basket-total">Total: £0.00</p>
-</div>
+    let basketList = document.getElementById("basket-items");
+    let basketTotal = document.getElementById("basket-total");
+
+    let listItem = document.createElement("li");
+    listItem.textContent = `${item} - £${price.toFixed(2)}`;
+    basketList.appendChild(listItem);
+
+    basketTotal.textContent = `Total: £${total.toFixed(2)}`;
+<script>
 .add-to-basket {
     background-color: #6b3e26;
     color: white;
@@ -114,28 +127,7 @@
 
 #basket-total {
     font-weight: bold;
-
-<p style="font-size: 14px; color: red;">
-    *This is a fictional store. No actual purchases or deliveries are made.*
-</p>
-
-<script>
-let basket = [];
-let total = 0;
-
-function addToBasket(item, price) {
-    basket.push({ name: item, price: price });
-    total += price;
-
-    let basketList = document.getElementById("basket-items");
-    let basketTotal = document.getElementById("basket-total");
-
-    let listItem = document.createElement("li");
-    listItem.textContent = `${item} - £${price.toFixed(2)}`;
-    basketList.appendChild(listItem);
-
-    basketTotal.textContent = `Total: £${total.toFixed(2)}`;
-<script>
+}
 
 <button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar - Small', 6.49)">Add to Basket</button>
 <button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar - Medium', 9.99)">Add to Basket</button>
@@ -150,3 +142,10 @@ function addToBasket(item, price) {
 <button class="add-to-basket" onclick="addToBasket('Chocolate Balls - Large (Pack of 48)', 19.99)">Add to Basket</button>
 
 <div id="basket">
+    <h2>Your Basket</h2>
+    <ul id="basket-items"></ul>
+    <p id="basket-total">Total: £0.00</p>
+</div>
+
+
+
