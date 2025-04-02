@@ -176,11 +176,14 @@ function addToBasket(item, price) {
 .product-image:hover {
     transform: scale(1.05);
     opacity: 0.8;
-<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar', 6.49)">Add to Basket</button>
-<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge', 12.49)">Add to Basket</button>
-<button class="add-to-basket" onclick="addToBasket('Chocolate Balls', 7.99)">Add to Basket</button>
+
 <img class="product-image" src="images/dubaichocolate.jpg" alt="Dubai Chocolate Bar">
 <img class="product-image" src="images/chocolatesponge.jpg" alt="Chocolate Sponge">
+    <h2>Your Basket</h2>
+    <ul id="basket-items"></ul>
+    <p id="basket-total">Total: £0.00</p>
+</div>
+
 <img class="product-image" src="images/chocolateballs.jpg" alt="Chocolate Balls">
 <script>
 let basket = [];
@@ -201,3 +204,16 @@ function addToBasket(item, price) {
 }
 </script>
 
+<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar - Small', 6.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar - Medium', 9.99)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar - Family', 14.49)">Add to Basket</button>
+
+<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge - Small', 12.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge - Medium', 14.99)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge - Family', 24.99)">Add to Basket</button>
+
+<button class="add-to-basket" onclick="addToBasket('Chocolate Balls - Small (Pack of 12)', 7.99)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Balls - Medium (Pack of 24)', 11.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Balls - Large (Pack of 48)', 19.99)">Add to Basket</button>
+
+<div id="basket">
