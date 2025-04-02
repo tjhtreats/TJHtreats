@@ -176,4 +176,28 @@ function addToBasket(item, price) {
 .product-image:hover {
     transform: scale(1.05);
     opacity: 0.8;
+<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar', 6.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge', 12.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Balls', 7.99)">Add to Basket</button>
+<img class="product-image" src="images/dubaichocolate.jpg" alt="Dubai Chocolate Bar">
+<img class="product-image" src="images/chocolatesponge.jpg" alt="Chocolate Sponge">
+<img class="product-image" src="images/chocolateballs.jpg" alt="Chocolate Balls">
+<script>
+let basket = [];
+let total = 0;
+
+function addToBasket(item, price) {
+    basket.push({ name: item, price: price });
+    total += price;
+
+    let basketList = document.getElementById("basket-items");
+    let basketTotal = document.getElementById("basket-total");
+
+    let listItem = document.createElement("li");
+    listItem.textContent = `${item} - £${price.toFixed(2)}`;
+    basketList.appendChild(listItem);
+
+    basketTotal.textContent = `Total: £${total.toFixed(2)}`;
 }
+</script>
+
