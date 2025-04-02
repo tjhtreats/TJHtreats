@@ -80,4 +80,71 @@
 </div>
 </body></html>
 
+<button class="add-to-basket" onclick="addToBasket('Dubai Chocolate Bar', 6.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Sponge', 12.49)">Add to Basket</button>
+<button class="add-to-basket" onclick="addToBasket('Chocolate Balls', 7.99)">Add to Basket</button>
+
+<div id="basket">
+    <h2>Your Basket</h2>
+    <ul id="basket-items"></ul>
+    <p id="basket-total">Total: £0.00</p>
+</div>
+.add-to-basket {
+    background-color: #6b3e26;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.add-to-basket:hover {
+    background-color: #8a5236;
+}
+
+#basket {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #6b3e26;
+    background-color: #f8f1e9;
+}
+
+#basket-items {
+    list-style: none;
+    padding: 0;
+}
+
+#basket-total {
+    font-weight: bold;
+}
+let basket = [];
+let total = 0;
+
+function addToBasket(item, price) {
+    basket.push({ name: item, price: price });
+    total += price;
+
+    let basketList = document.getElementById("basket-items");
+    let basketTotal = document.getElementById("basket-total");
+
+    let listItem = document.createElement("li");
+    listItem.textContent = `${item} - £${price.toFixed(2)}`;
+    basketList.appendChild(listItem);
+
+    basketTotal.textContent = `Total: £${total.toFixed(2)}`;
+}
+.product-image {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+<img class="product-image" src="images/dubaichocolate.jpg" alt="Dubai Chocolate Bar">
+<img class="product-image" src="images/chocolatesponge.jpg" alt="Chocolate Sponge">
+<img class="product-image" src="images/chocolateballs.jpg" alt="Chocolate Balls">
+<p style="font-size: 14px; color: red;">
+    *This is a fictional store. No actual purchases or deliveries are made.*
+</p>
 
